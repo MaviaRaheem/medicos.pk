@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="img/newlogo.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Medicos.Pk</title>
+ <link href="https://fonts.googleapis.com/css?family=Raleway:ital;wght@0,300;0,400;0,500;0,700;1,600&display=swap" 
+    rel='stylesheet'>
+</head>
+<body>
+
+      <!-- header -->
+      <nav class="navbar navbar-expand-lg navbar-light bg-light fade-in">
+        <div class="container">
+          <a class="navbar-brand" href="#"><img src="img/newlogo.png" style="height: 70px; width: 70px;"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); transition: text-shadow 0.3s, color 0.3s;">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="services.html" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); transition: text-shadow 0.3s, color 0.3s;">Shop</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="Doctor.html" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); transition: text-shadow 0.3s, color 0.3s;">Doctors</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="About Us.html" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); transition: text-shadow 0.3s, color 0.3s;">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contactus.html" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); transition: text-shadow 0.3s, color 0.3s;">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="feedback.html" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); transition: text-shadow 0.3s, color 0.3s;">Feedback</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="appointmentModal" data-bs-toggle="modal" data-bs-target="#appointmentModal" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); transition: text-shadow 0.3s, color 0.3s;">Make Appiontment</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+         <!-- end header -->
+
+         <div class="container mt-5" style="width: 60%;">
+          
+          <form class="d-flex" style="margin-top: 20px;">
+            <input class="form-control me-2" type="search" placeholder="Search Here" aria-label="Search">
+            <button class="btn btn-outline-primary" type="submit">Search</button>
+           <div class="icon" style="margin-left: 20px; height: 10px; margin-top: 10px; cursor: pointer;">
+            <i class="fas fa-shopping-bag cart-icon" id="cartIcon" ><span id="cartItemCount">0</span></i>
+        
+        </div>
+          </form>
+         </div>
+        </div>
+
+         <div id="cartSidebar" class="cart-sidebar" style="cursor: pointer;">
+          <button id="cartCloseButton" class="btn btn-primary cart-close-button">×</button>
+          <h5>Your Cart</h5>
+          <ul id="cartList" class="list-unstyled">
+            <!-- Cart items will be added here using JavaScript -->
+          </ul>
+          <p id="cartTotal">Total: Rs 0.00</p>
+          <button id="cartCloseButton"  class="btn btn-primary ">Close</button>
+        <a href="check out page.html" class="btn btn-primary">Checkout</a>
+        </div>
+  
+  <!-- Cards -->
+  <style>
+      .cart-icon {
+  font-size: 24px; 
+  color: #14958a; 
+  transition: color 0.3s;
+}
+
+.cart-icon:hover {
+  color: #1fc7ab; 
+}
+     .addToCartButton {
+      background-color: #14958a;
+      border: none;
+      transition: background-color 0.3s, transform 0.3s;
+      cursor: pointer;
+      transform: translateY(0);
+    }
+
+    /* Hover effect for the "ADD TO CART" button */
+    .addToCartButton:hover {
+      background-color: #10796e;
+      transform: translateY(-5px);
+    }
+    
+    .cart-sidebar {
+  /* Existing styles... */
+  background-color: #fff;
+  border-left: 1px solid #ddd;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  transition: right 0.5s ease; /* Add transition property for smooth animation */
+}
+
+.cart-sidebar.active {
+  right: 0; /* Slide in from the right when active */
+}
+
+  .cart-close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    color: #555;
+  }
+
+  .cart-close-button:hover {
+    color: #333;
+  }
+
+  .cart-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.cart-item-img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+}
+
+.cart-item-image {
+  margin-right: 10px;
+}
+
+.cart-item-details {
+  flex-grow: 1;
+}
+
+#cartTotal {
+  /* Existing styles... */
+  text-align: right;
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+
+    /* Your existing styles and additional cart sidebar styles */
+    .cart-sidebar {
+    width: 300px;
+    position: fixed;
+    top: 0;
+    right: -300px; /* Initially off-screen */
+    height: 100%;
+    background-color: #f2f2f2;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000; /* Ensure it's displayed above card content */
+  }
+
+  .cart-sidebar.active {
+    right: 0; /* Slide in from the right when active */
+  }
+       .navbar-nav .nav-link {
+    position: relative;
+  }
+
+  .navbar-nav .nav-link::before {
+    content: "";
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #14958a;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s;
+  }
+
+  .navbar-nav .nav-link:hover::before {
+    transform: scaleX(0.9);
+  }
+    .card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);} 
+    
+
+.form-control {
+  border-radius: 30px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn-outline-primary {
+  border-radius: 30px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+}
+
+.btn-outline-primary:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+.fade-in {
+    opacity: 0;
+    animation: fadeInAnimation 1s ease forwards;
+}
+
+@keyframes fadeInAnimation {
+    to {
+        opacity: 1;
+    }
+}
+  </style>
+
+  <div class="container" style="margin-top: 50px;">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card mb-4 shadow">
+          <img src="img/nut.webp" class="card-img-top" alt="Card Image">
+          <div class="card-body">
+            <h5 class="card-title">MULTI_FACTOR</h5>
+            <p class="card-text">This medicine works by stimulating the absorption of calcium and phosphorus from the intestines
+              . It also promotes reabsorption of calcium from the bones and the kidneys.
+            </p>
+            <span><h6>Rs:200</h6></span>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <a href="#" id="cartIcon" class="btn btn-primary addToCartButton">ADD TO CART</a>
+            
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card mb-4 shadow">
+          <img src="img/vitmax.webp" class="card-img-top" alt="Card Image">
+          <div class="card-body">
+            <h5 class="card-title">VITMAX WOMEN</h5>
+            <p class="card-text">It helps to boost energy, support immunity, heart, brain and eye health. It also helps to improve metabolism and muscle functions. This formula is specially.</p>
+            <span><h6>Rs:250</h6></span>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star-o"></i>
+            <a href="#" id="cartIcon" class="btn btn-primary addToCartButton">ADD TO CART</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card mb-4 shadow">
+          <img src="img/brufeen.png" class="card-img-top" alt="Card Image">
+          <div class="card-body">
+            <h5 class="card-title">BRUFEEN SYRUP</h5>
+            <p class="card-text">Brufen Syrup can also be used to treat other painful conditions such as toothache, pain It can also be used for the short term treatment of fever in children over the age of 1 year</p>
+            <span><h6>Rs:80</h6></span>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star-o"></i>
+            <a href="#" id="cartIcon" class="btn btn-primary addToCartButton">ADD TO CART</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card mb-4 shadow">
+          <img src="img/calplp.jpg" class="card-img-top" alt="Card Image">
+          <div class="card-body">
+            <h5 class="card-title">CAPOL</h5>
+            <p class="card-text">CALPOL Infant Original 120mg/5ml Oral Suspension is indicated for the treatment of mild to moderate pain and as an antipyretic. It can be used in many conditions including headache, toothache, earache,</p>
+            <span><h6>Rs:60</h6></span>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star-o"></i>
+            <a href="#" id="cartIcon" class="btn btn-primary addToCartButton">ADD TO CART</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card mb-4 shadow">
+          <img src="img/vidalin.jpg" class="card-img-top" alt="Card Image">
+          <div class="card-body">
+            <h5 class="card-title">VIDALIYN</h5>
+            <p class="card-text">For treatment and prevention of different forms of anaemia.For preventing iron, folic acid, Vitamin B12 and zinc deficiencies during fever after surgery or in conditions of nutritional .</p>
+            <span><h6>Rs:100</h6></span>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <a href="#" id="cartIcon" class="btn btn-primary addToCartButton">ADD TO CART</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card mb-4 shadow">
+          <img src="img/nuberol.png" class="card-img-top" alt="Card Image">
+          <div class="card-body">
+            <h5 class="card-title">NUBEROL FORTE</h5>
+            <p class="card-text">The combination of paracetamol and orphenadrine (Nuberol Forte) exhibited effective pain management among patients with musculoskeletal conditions and improved their QoL.</p>
+            <span><h6>Rs:100</h6></span>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star-o"></i>
+            <a href="#" id="cartIcon" class="btn btn-primary addToCartButton">ADD TO CART</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card mb-4 shadow">
+          <img src="img/fav.png" class="card-img-top" alt="Card Image">
+          <div class="card-body">
+            <h5 class="card-title">Faverin</h5>
+            <p class="card-text">Faverin contains a substance called fluvoxamine. This is an antidepressant. It is used to treat depression (major depressive episode). Faverin can also treat people who have obsessive compulsive disorder (OCD)</p>
+            <span><h6>Rs:100</h6></span>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star-o"></i>
+            <a href="#" id="cartIcon" class="btn btn-primary addToCartButton">ADD TO CART</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card mb-4 shadow">
+          <img src="img/safi.jpg" class="card-img-top" alt="Card Image">
+          <div class="card-body">
+            <h5 class="card-title">Safi</h5>
+            <p class="card-text">Safi helps keep your stomach clear and well functioning. The tonic helps clear constipation and indigestion. Purification of blood with the use of Hamdard Safi leads to glowing skin and better skin health</p>
+            <span><h6>Rs:100</h6></span>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star-o"></i>
+            <a href="#" id="cartIcon" class="btn btn-primary addToCartButton">ADD TO CART</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"></script>
+
+      <!-- end card -->
+      <!-- modal -->
+<div class="modal fade" id="appointmentModal" tabindex="-1" aria-labelledby="appointmentModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header" style="background-color: rgba(7, 115, 145, 0.621);">
+        <h5 class="modal-title" id="appointmentModalLabel">Doctor Appointment</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+       <!-- Appionment Form -->
+        <form>
+          <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="name" required>
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="email" required>
+          </div>
+          <label for="doctor" class="form-label">Doctor</label>
+          
+          <input type="date" class="form-control" id="dateInput" required>
+          <button type="submit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#appointmentSentModal">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="appointmentSentModal" tabindex="-1" aria-labelledby="appointmentSentModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content shadow">
+      <div class="modal-header">
+        <h5 class="modal-title" id="appointmentSentModalLabel">Appionment Sent</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-center">
+        <img src="img/404-tick.png" alt="Tick" style="width: 80px; height: 80px;">
+        <p>Your Appionment Has Been Sent. We Contact You Soon </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">OK</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+       <!-- footer -->
+<div class="container-fluid text-white p-3" style=" font-family: 'Poppins',sans-serif;background: #0f0c29;
+background: linear-gradient(to right, #24243e,#302b63,
+#0f0c29) ">
+<div class="mt-3">
+  <h3 class="text-center fw-bold">Want To Appreicate Us.</h3>
+<p class="text-center">Be Healthy By Stay Happy</p>
+<center><a href="https://www.instagram.com/maviaraheem0.9/" class="btn btn-block btn-outline-light" >Visit Us</a></center>
+<hr>
+</div>
+<div class="row justify-content-around text-center text-md-start">
+  <div class="col-md-2 text-center">
+    <h1 class="fw-bold mt-3">Medicos.Pk</h1>
+    <h4>Mavia And Brothers</h4>
+  </div>
+  <div class="col-md-2">
+    <ul class="list-unstyled">
+      <li class="fw-bold-my-2">Partnership</li>
+      <li><a href="#" class="text-decoration-none text-white">Website</a></li>
+      <li><a href="#" class="text-decoration-none text-white">Social Media</a></li>
+      <li><a href="#" class="text-decoration-none text-white">Branding</a></li>
+    </ul>
+  </div>
+  <div class="col-md-2">
+    <ul class="list-unstyled">
+      <li class="fw-bold fw-bold-my-2">About</li>
+      <li><a href="#" class="text-decoration-none text-white">Our Project</a></li>
+      <li><a href="#" class="text-decoration-none text-white">Careers</a></li>
+    </ul>
+  </div>
+  <div class="col-md-2">
+    <ul class="list-unstyled">
+      <li class="fw-bold-my-2">Support Us</li>
+      <li><a href="#" class="text-decoration-none text-white">Contact Us</a></li>
+      <li><a href="#" class="text-decoration-none text-white">Support Request</a></li>
+    </ul>
+  </div>
+  <div class="col-md-2">
+    <li class="fw-bold-my-2 list-unstyled">Follow US</li>
+    <ul class="list-unstyled d-flex justify-content-center justify-content-md-start">
+      <li><a href="https://www.facebook.com" class="text-white"><i class="fa-brands fa-facebook me-2 fa-1x"></i></a></li>
+      <li><a href="https://www.whatsapp.com" class="text-white"><i class="fa-brands fa-whatsapp mx-2 fa-1x"></i></a></li>
+      <li><a href="https://www.youtube.com" class="text-white"><i class="fa-brands fa-youtube mx-2 fa-1x"></i></a></li>
+      <li><a href="https://www.instagram.com" class="text-white"><i class="fa-brands fa-instagram mx-2 fa-1x"></i></a></li>
+    </ul>
+  </div>
+</div>
+<hr>
+<div class="row">
+  <div class="col-md-12 text-center pt-2">
+    <p>&copy; 2023 CopyRight <a href="#" class="text-white">Medicos.Pk</a></p>
+  </div>
+</div>
+</div>
+
+      
+</body>
+<script src="add to cart.js"></script>
+</html>

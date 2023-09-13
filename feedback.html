@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link rel="icon" type="image/png" href="img/newlogo.png"  >
+    <title>Medicos.Pk</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css" integrity="sha384-QYIZto+st3yW+o8+5OHfT6S482Zsvz2WfOzpFSXMF9zqeLcFV0/wlZpMtyFcZALm" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" /> 
+  
+  </head>
+<body>
+    <!-- header -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fade-in">
+      <div class="container">
+        <a class="navbar-brand" href="#"><img src="img/newlogo.png" style="height: 70px; width: 70px;"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); transition: text-shadow 0.3s, color 0.3s;">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="services.html" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); transition: text-shadow 0.3s, color 0.3s;">Shop</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="Doctor.html" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); transition: text-shadow 0.3s, color 0.3s;">Doctors</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="About Us.html" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); transition: text-shadow 0.3s, color 0.3s;">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contactus.html" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); transition: text-shadow 0.3s, color 0.3s;">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="feedback.html" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); transition: text-shadow 0.3s, color 0.3s;">Feedback</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="appointmentModal" data-bs-toggle="modal" data-bs-target="#appointmentModal" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); transition: text-shadow 0.3s, color 0.3s;">Make Appiontment</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  <!-----------------------------------------------feedback------------------------------------------------------------------->
+  
+    <div class="container">
+      <div class="row py-5 g-3">
+        <div class="col-md-6 first_col" style="box-shadow: 0px 0px 20px rgba(70, 64, 64, 0.4);">
+          <h1 class="text-center mt-3">Feedback US</h1>
+          <form class="p-4 mt-5">
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label">Enter Name</label>
+              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Steve Smith">
+            </div>
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label">Email Address</label>
+              <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="MED@gmail.com">
+            </div>
+            <div class="mb-3">
+              <label for="exampleFormControlTextarea1" class="form-label">Enter Your Feedback</label>
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+            <div class="mb-3">
+              <label for="rating" class="form-label">Rating</label>
+              <div class="rating-stars" style="margin-left: -220px; margin-top: -40px;">
+                <input type="radio" name="rating" value="5" id="star5"><label for="star5"></label>
+                <input type="radio" name="rating" value="4" id="star4"><label for="star4"></label>
+                <input type="radio" name="rating" value="3" id="star3"><label for="star3"></label>
+                <input type="radio" name="rating" value="2" id="star2"><label for="star2"></label>
+                <input type="radio" name="rating" value="1" id="star1"><label for="star1"></label>
+              </div>
+            </div>
+            <div class="mb-3">
+              <button id="sendFeedbackBtn" class="btn btn-primary" style="margin-top: 20px;">Send Now</button>
+              
+            </div>
+          </form>
+        </div>
+        <div class="col-md-6">
+          <img src="img/medical eq1 (1).jpg" class="img-fluid" style="border-radius: 8px; box-shadow: 0px 0px 20px rgba(70, 64, 64, 0.4);">
+        </div>
+      </div>
+    </div>
+ 
+  
+<!-- --------------------------------------------------Reviwes------------------------------------------------------- -->
+    <section id="testimonials">
+      <div class="testimonials-heading">
+        <span>Rewiews</span>
+        <h1>What Are Clients Says</h1>
+      </div>  
+      <div class="testimonials-box-container">
+        <div class="testimonials-box" style="box-shadow: 0px 0px 20px rgba(70, 64, 64, 0.4); height: 200px;">
+          <div class="box-top">
+            <div class="profile">
+              <div class="profile-img">
+                <img src="img/face.jpg" >
+              </div>
+              <div class="user-name">
+                <strong>Lisa</strong>
+                <span>@lisasteve</span>
+
+              </div>
+            </div>
+            <div class="reviews">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="far fa-star"></i>
+            </div>
+          </div>
+          <div class="client-comment">
+            <p>This Platform is Great I Buy Product Online,100% real Products 100% Recommended</p>
+          </div>
+        </div>
+        <div class="testimonials-box" style="box-shadow: 0px 0px 20px rgba(70, 64, 64, 0.4); height: 200px;">
+          <div class="box-top">
+            <div class="profile">
+              <div class="profile-img">
+                <img src="img/human2 (1).jpg" >
+              </div>
+              <div class="user-name">
+                <strong>brayene Lob</strong>
+                <span>@brayenestalab</span>
+
+              </div>
+            </div>
+            <div class="reviews">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+          <div class="client-comment">
+            <p>They Provide Higly Qualified Doctors I Love Thier facilities</p>
+          </div>
+        </div>
+        <div class="testimonials-box" style="box-shadow: 0px 0px 20px rgba(70, 64, 64, 0.4); height: 200px;"> 
+          <div class="box-top">
+            <div class="profile">
+              <div class="profile-img">
+                <img src="img/human2 (2).jpg" >
+              </div>
+              <div class="user-name">
+                <strong>Marif Raheem</strong>
+                <span>@marifraheem</span>
+
+              </div>
+            </div>
+            <div class="reviews">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="far fa-star"></i>
+            </div>
+          </div>
+          <div class="client-comment">
+            <p>This Company Is Great It Helped Me to Order Any Medicines online With Online Doctor  </p>
+          </div>
+        </div>
+        <div class="testimonials-box" style="box-shadow: 0px 0px 20px rgba(70, 64, 64, 0.4); height: 200px;">
+          <div class="box-top">
+            <div class="profile">
+              <div class="profile-img">
+                <img src="img/humangirl.jfif" >
+              </div>
+              <div class="user-name">
+                <strong>Aliza</strong>
+                <span>@AlizaIman</span>
+
+              </div>
+            </div>
+            <div class="reviews">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+          <div class="client-comment">
+            <p>This Website Never Dissappiont me</p>
+          </div>
+        </div>
+        <div class="testimonials-box" style="box-shadow: 0px 0px 20px rgba(70, 64, 64, 0.4); height: 200px;">
+          <div class="box-top">
+            <div class="profile">
+              <div class="profile-img">
+                <img src="img/humang.jfif" >
+              </div>
+              <div class="user-name">
+                <strong>Naila</strong>
+                <span>@nailatahir</span>
+
+              </div>
+            </div>
+            <div class="reviews">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+          <div class="client-comment">
+            <p>This Website Help Me In Corona So Perfect </p>
+          </div>
+        </div>
+        <div class="testimonials-box" style="box-shadow: 0px 0px 20px rgba(70, 64, 64, 0.4); height: 200px;">
+          <div class="box-top">
+            <div class="profile">
+              <div class="profile-img">
+                <img src="img/human2.jfif" >
+              </div>
+              <div class="user-name">
+                <strong>Muhamil</strong>
+                <span>@Muhamilraheem</span>
+
+              </div>
+            </div>
+            <div class="reviews">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+          <div class="client-comment">
+            <p>100% Recommended</p>
+          </div>
+        </div>
+      </div>
+      
+      
+    </section>
+<!-- ---------------------------------------------------------------------modal of rewiew -->
+<div class="modal fade" id="rewiewsendmodal" tabindex="-1" aria-labelledby="rewiewsendmodalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content shadow">
+      <div class="modal-header">
+        <h5 class="modal-title" id="rewiewsendmodalLabel">Thank You For Your Feedback</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-center">
+        <img src="img/404-tick.png" alt="Tick" style="width: 80px; height: 80px;">
+        <p>We Will Appreciate Your Comment</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">OK</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!------------------------------------------------------------------- end modal of rewiwe -->
+
+
+<!----------------------------------------------------modal ------------------------------------------------------->
+<div class="modal fade" id="appointmentModal" tabindex="-1" aria-labelledby="appointmentModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header" style="background-color: rgba(7, 115, 145, 0.621);">
+        <h5 class="modal-title" id="appointmentModalLabel">Doctor Appointment</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+       <!-- Appionment Form -->
+        <form>
+          <div class="mb-3">
+            <label for="name" class="form-label" style="color: #000;">Name</label>
+            <input type="text" class="form-control" id="name" required>
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label" style="color: #000;">Email address</label>
+            <input type="email" class="form-control" id="email" required>
+          </div>
+          <label for="doctor" class="form-label" style="color: #000;">Doctor</label>
+          <input type="text" class="form-control" id="text" required>
+          <button type="submit" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#appointmentSentModal" style="color: #000;">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="appointmentSentModal" tabindex="-1" aria-labelledby="appointmentSentModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content shadow">
+      <div class="modal-header">
+        <h5 class="modal-title" id="appointmentSentModalLabel">Appionment Sent</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body text-center">
+        <img src="img/404-tick.png" alt="Tick" style="width: 80px; height: 80px;">
+        <p>Your Appionment Has Been Sent. We Contact You Soon </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">OK</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+     .navbar-nav .nav-link {
+    position: relative;
+  }
+
+  .navbar-nav .nav-link::before {
+    content: "";
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #14958a;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s;
+  }
+
+  .navbar-nav .nav-link:hover::before {
+    transform: scaleX(0.9);
+  }
+  .fade-in {
+    opacity: 0;
+    animation: fadeInAnimation 1s ease forwards;
+}
+
+@keyframes fadeInAnimation {
+    to {
+        opacity: 1;
+    }
+}
+.first_col{
+  background-color: #f8f9fa;
+  height: 550px;
+  position: relative;
+  width: 550px;
+  left: 155px;
+  top: 171px;
+  border-radius: 20px;
+}
+/* Rweiws */
+a{
+  text-decoration: none;
+
+}
+#testimonials{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+
+}
+.testimonials-heading{
+  letter-spacing: 1px;
+  margin: 30px 0px;
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.testimonials-heading h1{
+  font-size: 2.2rem;
+  font-weight: 500;
+  background-color: #202020;
+  color: #fff;
+  padding: 10px 20px;
+
+}
+.testimonials-heading span{
+  font-size: 1.3rem;
+  color: #252525;
+  margin-bottom: 10px;
+  letter-spacing: 2PX;
+  text-transform: uppercase;
+
+}
+.testimonials-box-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+
+}
+.testimonials-box{
+  width: 500px;
+  box-shadow: 2px 2px 30px rgba(0, 0,0,0.1);
+  background-color: #ffffff;
+  padding: 20px;
+  margin: 15px;
+  cursor: pointer;
+
+}
+.profile-img{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 10px ;
+}
+.profile-img img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.profile{
+  display: flex;
+  flex-direction: column;
+}
+.user-name{
+  display: flex;
+  flex-direction: column;
+}
+.user-name strong{
+  color: #3d3d3d;
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+
+}
+.user-name span{
+  color: #979797;
+  font-size: 0.8rem;
+   
+}
+.reviews{
+  color: #f9d71c;
+}
+.box-top{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+
+}
+.client-comment{
+  font-size: 0.9rem;
+  color: #4b4b4b;
+
+}
+.testimonials-box {
+ 
+    transition: all ease 0.5s;
+}
+
+.testimonials-box:hover {
+   
+    transform: translateY(-10px);
+}
+.rating-stars {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.rating-stars input[type="radio"] {
+  display: none;
+}
+
+.rating-stars label {
+  cursor: pointer;
+  font-size: 24px;
+}
+
+.rating-stars label:before {
+  content: '\2605'; /* Unicode star character */
+}
+
+.rating-stars input[type="radio"]:checked ~ label:before {
+  color: gold; /* Change the color of selected stars */
+}
+</style>
+<!-- footer -->
+<div class="container-fluid text-white p-3" style=" font-family: 'Poppins',sans-serif;background: #0f0c29;
+background: linear-gradient(to right, #24243e,#302b63,
+#0f0c29) ">
+<div class="mt-3">
+  <h3 class="text-center fw-bold">Want To Appreicate Us.</h3>
+<p class="text-center">Be Healthy By Stay Happy</p>
+<center><a href="https://www.instagram.com/maviaraheem0.9/" class="btn btn-block btn-outline-light" >Visit Us</a></center>
+<hr>
+</div>
+<div class="row justify-content-around text-center text-md-start">
+  <div class="col-md-2 text-center">
+    <h1 class="fw-bold mt-3">Medicos.Pk</h1>
+    <h4>Mavia And Brothers</h4>
+  </div>
+  <div class="col-md-2">
+    <ul class="list-unstyled">
+      <li class="fw-bold-my-2">Partnership</li>
+      <li><a href="#" class="text-decoration-none text-white">Website</a></li>
+      <li><a href="#" class="text-decoration-none text-white">Social Media</a></li>
+      <li><a href="#" class="text-decoration-none text-white">Branding</a></li>
+    </ul>
+  </div>
+  <div class="col-md-2">
+    <ul class="list-unstyled">
+      <li class="fw-bold fw-bold-my-2">About</li>
+      <li><a href="#" class="text-decoration-none text-white">Our Project</a></li>
+      <li><a href="#" class="text-decoration-none text-white">Careers</a></li>
+    </ul>
+  </div>
+  <div class="col-md-2">
+    <ul class="list-unstyled">
+      <li class="fw-bold-my-2">Support Us</li>
+      <li><a href="#" class="text-decoration-none text-white">Contact Us</a></li>
+      <li><a href="#" class="text-decoration-none text-white">Support Request</a></li>
+    </ul>
+  </div>
+  <div class="col-md-2">
+    <li class="fw-bold-my-2 list-unstyled">Follow US</li>
+    <ul class="list-unstyled d-flex justify-content-center justify-content-md-start">
+      <li><a href="https://www.facebook.com" class="text-white"><i class="fa-brands fa-facebook me-2 fa-1x"></i></a></li>
+      <li><a href="https://www.whatsapp.com" class="text-white"><i class="fa-brands fa-whatsapp mx-2 fa-1x"></i></a></li>
+      <li><a href="https://www.youtube.com" class="text-white"><i class="fa-brands fa-youtube mx-2 fa-1x"></i></a></li>
+      <li><a href="https://www.instagram.com" class="text-white"><i class="fa-brands fa-instagram mx-2 fa-1x"></i></a></li>
+    </ul>
+  </div>
+</div>
+<hr>
+<div class="row">
+  <div class="col-md-12 text-center pt-2">
+    <p>&copy; 2023 CopyRight <a href="#" class="text-white">Medicos.Pk</a></p>
+  </div>
+</div>
+</div>
+</section>
+</body>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const sendFeedbackBtn = document.getElementById("sendFeedbackBtn");
+    const reviewSendModal = new bootstrap.Modal(document.getElementById("rewiewsendmodal"));
+  
+    sendFeedbackBtn.addEventListener("click", function(event) {
+      event.preventDefault(); // Prevent form submission
+  
+      // Show the modal
+      reviewSendModal.show();
+    });
+  });
+  </script>
+</html>
