@@ -28,7 +28,7 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="nav-link" href="index.html" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); transition: text-shadow 0.3s, color 0.3s;">ome</a>
+            <a class="nav-link" href="index.html" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); transition: text-shadow 0.3s, color 0.3s;">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="services.html" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); transition: text-shadow 0.3s, color 0.3s;">Shop</a>
@@ -545,6 +545,40 @@ background: linear-gradient(to right, #24243e,#302b63,
 </div>
 
 </body>
+<script>
+  $(document).ready(function () {
+    $('.owl-carousel').owlCarousel({
+      loop: true,
+      margin: 15,
+      nav: false,
+      dots: false,
+      responsive: {
+        0: { items: 1 },
+        768: { items: 2 },
+        992: { items: 3 }
+      }
+    });
+
+    $('.carousel-prev').click(function () {
+      $('.owl-carousel').trigger('prev.owl.carousel');
+    });
+
+    $('.carousel-next').click(function () {
+      $('.owl-carousel').trigger('next.owl.carousel');
+    });
+
+    // Prevent carousel from sliding when clicking the appointment button
+    $('.appointment-btn').on('click', function (event) {
+      event.stopPropagation();
+    });
+
+    // Show appointment modal
+    $('#appointmentModal').on('shown.bs.modal', function () {
+      console.log('Modal opened successfully!');
+    });
+  });
+</script>
+
 <script>
   $(document).ready(function () {
       $('.owl-carousel').owlCarousel({
